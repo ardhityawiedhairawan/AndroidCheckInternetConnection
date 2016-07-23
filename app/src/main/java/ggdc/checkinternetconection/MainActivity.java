@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 ConnectivityManager cm = (ConnectivityManager) getApplication().getSystemService(Context.CONNECTIVITY_SERVICE);
                 NetworkInfo netInfo = cm.getActiveNetworkInfo();
-                if (netInfo != null && netInfo.isConnectedOrConnecting()) {
+                if (netInfo != null && netInfo.isConnected()) {
                     Toast.makeText(getApplication(), "You are connected to "+netInfo.getTypeName()+" "+netInfo.getSubtypeName(), Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(getApplication(), "You don't have connection.", Toast.LENGTH_SHORT).show();
